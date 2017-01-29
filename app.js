@@ -20,7 +20,7 @@ function ToBuyController(ShoppingListCheckOffService){
 AlreadyBoughtController.$inject=['ShoppingListCheckOffService','$scope'];
 function AlreadyBoughtController(ShoppingListCheckOffService,$scope){
     var bought = this;
-    $scope.$watch(function () {    
+    $scope.$watch(function () {
       bought.listBought = ShoppingListCheckOffService.getBoughtItems();
     })
 }
@@ -33,12 +33,12 @@ function ShoppingListCheckOffService(){
      {name: "hamburgers", quantity: 1},
      {name: "beers", quantity: 2},
      {name: "candies", quantity: 2},
-     {name: "soda", quantity: 3}
+     {name: "sodas", quantity: 3}
   ];
   var bought=[];
    service.bought = function(index){
      if(to_buy.length>0){
-       bought.push(new Object(to_buy[index]));
+       bought.push(to_buy[index]);
        to_buy.splice(index,1);
      }
    }
